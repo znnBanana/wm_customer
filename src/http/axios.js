@@ -32,7 +32,6 @@ export function get (url, params) {
     method: 'get',
     url,
     params, // get 请求时带的参数
-    timeout: 10000,
     headers: {
       'X-Requested-With': 'XMLHttpRequest'
     }

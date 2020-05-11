@@ -30,7 +30,7 @@
                 <div class="confirm_pro_list" v-for="line in orderLines.values()" :key="line.productId">
                     <van-row>
                         <van-col offset="1" span="4">
-                            <div class="pro_list_img"><img src="../../../assets/photo.jpeg" alt=""></div>
+                            <div class="pro_list_img"><img src="../../../assets/wm_logo.jpeg" alt=""></div>
                         </van-col>
                         <div style="line-height: 40px">
                             <van-col span="13">

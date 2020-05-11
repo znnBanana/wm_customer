@@ -22,7 +22,7 @@ export default {
         // 保存评论
         async SaveComment({dispatch},params){
             let response = await post('/comment/saveOrUpdate',params)
-            dispatch('refreshComment')
+            // dispatch('refreshComment')
             return response
         },
         // 分页查询评论

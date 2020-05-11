@@ -72,41 +72,48 @@ export default {
   },
   mounted() {
     this.findAllOrders()
-    if(this.ordersStatusFilter('待支付').length == 0){
-      let warnInfo = document.getElementById('warnInfo1')
-      warnInfo.innerHTML = '暂无 待支付订单~'
-      warnInfo.style.marginTop = '5em'
-      warnInfo.style.marginLeft = '10em'
-      warnInfo.style.marginBottom = '5em'
-    }
-    if(this.ordersStatusFilter('待派单').length == 0){
-      let warnInfo = document.getElementById('warnInfo2')
-      warnInfo.innerHTML = '暂无 待派订单~'
-      warnInfo.style.marginTop = '5em'
-      warnInfo.style.marginLeft = '10em'
-      warnInfo.style.marginBottom = '5em'
-    }
-    if(this.ordersStatusFilter('待接单').length == 0){
-      let warnInfo = document.getElementById('warnInfo3')
-      warnInfo.innerHTML = '暂无 待接订单~'
-      warnInfo.style.marginTop = '5em'
-      warnInfo.style.marginLeft = '10em'
-      warnInfo.style.marginBottom = '5em'
-    }
-    if(this.ordersStatusFilter('待服务').length == 0){
-      let warnInfo = document.getElementById('warnInfo4')
-      warnInfo.innerHTML = '暂无 待配送订单~'
-      warnInfo.style.marginTop = '5em'
-      warnInfo.style.marginLeft = '10em'
-      warnInfo.style.marginBottom = '5em'
-    }
-    if(this.ordersStatusFilter('待确认').length == 0){
-      let warnInfo = document.getElementById('warnInfo5')
-      warnInfo.innerHTML = '暂无 待确认订单~'
-      warnInfo.style.marginTop = '5em'
-      warnInfo.style.marginLeft = '10em'
-      warnInfo.style.marginBottom = '5em'
-    }
+    // if(this.ordersStatusFilter('待支付').length == 0){
+    //   let warnInfo = document.getElementById('warnInfo1')
+    //   warnInfo.innerHTML = '暂无 待支付订单~'
+    //   warnInfo.style.marginTop = '5em'
+    //   warnInfo.style.marginLeft = '10em'
+    //   warnInfo.style.marginBottom = '5em'
+    // }
+    // if(this.ordersStatusFilter('待派单').length == 0){
+    //   let warnInfo = document.getElementById('warnInfo2')
+    //   warnInfo.innerHTML = '暂无 待派订单~'
+    //   warnInfo.style.marginTop = '5em'
+    //   warnInfo.style.marginLeft = '10em'
+    //   warnInfo.style.marginBottom = '5em'
+    // }
+    // if(this.ordersStatusFilter('待接单').length == 0){
+    //   let warnInfo = document.getElementById('warnInfo3')
+    //   warnInfo.innerHTML = '暂无 待接订单~'
+    //   warnInfo.style.marginTop = '5em'
+    //   warnInfo.style.marginLeft = '10em'
+    //   warnInfo.style.marginBottom = '5em'
+    // }
+    // if(this.ordersStatusFilter('待服务').length == 0){
+    //   let warnInfo = document.getElementById('warnInfo4')
+    //   warnInfo.innerHTML = '暂无 待配送订单~'
+    //   warnInfo.style.marginTop = '5em'
+    //   warnInfo.style.marginLeft = '10em'
+    //   warnInfo.style.marginBottom = '5em'
+    // } else {
+    //   let warnInfo = document.getElementById('warnInfo4')
+    //   warnInfo.innerHTML = ''
+    //   warnInfo.style = 'none'
+    //   // warnInfo.style.marginTop = '0'
+    //   // warnInfo.style.marginLeft = '0'
+    //   // warnInfo.style.marginBottom = '0'
+    // }
+    // if(this.ordersStatusFilter('待确认').length == 0){
+    //   let warnInfo = document.getElementById('warnInfo5')
+    //   warnInfo.innerHTML = '暂无 待确认订单~'
+    //   warnInfo.style.marginTop = '5em'
+    //   warnInfo.style.marginLeft = '10em'
+    //   warnInfo.style.marginBottom = '5em'
+    // }
   },
   methods: {
     ...mapActions('order',['findAllOrders']),

@@ -27,8 +27,8 @@
                     <van-col class="comment_right_outer" span="18">
                         <div class="comment_right">
                             <van-row>
-                                <van-col span="12"><div class="comment_cus">{{info.name}}</div></van-col>
-                                <van-col span="11"><div class="comment_time">{{cc.commentTime | datefmt}}</div></van-col>
+                                <van-col span="10"><div class="comment_cus">{{info.name}}</div></van-col>
+                                <van-col span="14"><div class="comment_time">{{cc.commentTime | datefmt}}</div></van-col>
                             </van-row>
                         </div>
                         <div class="comment_fei">{{cc.category_name}}<span></span> 飞毛腿专送 火速送达</div>
@@ -67,6 +67,7 @@ import { Overlay } from 'vant';
 import { Toast } from 'vant';
 
 export default {
+    inject:['reload'],
     data() {
         return {
             params:{
@@ -87,33 +88,28 @@ export default {
         this.findAllCommentsBycus(this.info.id)
 
         this.FindCustomerById(this.info.id)
-        // 根据产品id查栏目名称
-        // this.findProductInfoById({id:this.order_first_id})
     },
     mounted(){
         setTimeout(()=>{
             this.xpf = this.commentBycus
-        },500)
+        },800)
     },
     computed: {
         ...mapState('comment',['comments','commentBycus']),
         ...mapState('user',['info','cusInfo']),
         ...mapState('order',['order_ById']),
-        // ...mapState('product',['productInfo'])
     },
     methods: {
         ...mapActions('comment',['QueryComment','findAllCommentsBycus','SaveComment','deleteComments']),
         ...mapActions('user',['FindCustomerById']),
         ...mapActions('order',['findOrderById']),
-        // ...mapActions('product',['findProductInfoById']),
         
         // 删除评论
         deteleHandler(id){
-            // alert('删除')
-            // console.log(id)
             this.deleteComments({id:id})
             .then(()=>{
                 this.findAllCommentsBycus(this.info.id)
+                this.reload();
                 Toast('删除成功')
             })
         },

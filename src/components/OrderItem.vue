@@ -3,20 +3,17 @@
     <!-- {{orderLines}} -->
     <!-- {{categories}} -->
     <!-- {{data}} -->
-    
     <van-row style="margin-bottom:1em;border-bottom:1px solid #f1f1f1;padding-bottom:1em">
-      <van-col span="6">
+      <van-col span="5">
         <div class="order_img"><img src="../assets/wm_logo.jpeg" alt=""></div>
       </van-col>
       <van-col span="14">
-        <div class="order_name">飞毛腿 外卖 
-          
-        </div>
+        <div class="order_name">飞毛腿 外卖 </div>
         <div class="order_time">{{data.orderTime | datefmt}}</div>
       </van-col>
       <van-col class="status" span="4">{{data.status}}</van-col>
       <van-row>
-        <van-col offset="6" span="14" v-for="ol in data.orderLines" :key="ol.id">
+        <van-col offset="5" span="15" v-for="ol in data.orderLines" :key="ol.id">
           <div class="order_text">{{ol.product.name}} 等1件</div>
           <div class="order_address">{{data.address.province}} {{data.address.city}} {{data.address.area}} {{data.address.address}}</div>
         </van-col>
@@ -118,11 +115,14 @@ export default {
         var customer_id = this.info.id
         var order_money = this.data.total
         this.payHandler({orderid,customer_id,order_money})
-        .then(()=>{
-        // console.log('1111')
-        Toast('已支付完成，请等待派单')
-        this.findAllOrders()
-        })
+        // .then((response)=>{
+        //   console.log(response)
+          
+        // })
+        setTimeout(()=>{
+          Toast('已支付完成，请等待派单')
+          this.findAllOrders()
+        },1500)
       }else{
         Toast('余额不足,请充值')
       }
