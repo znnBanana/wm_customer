@@ -9,9 +9,9 @@
       <van-row>
         <van-col :span="16">
           <div class="name">{{info.name}}</div>
-          <div style="color:#bbb">再忙，也要记得吃饭呦~</div>
+          <div style="color:#bbb">{{cusInfo.realname}}，再忙也要记得吃饭呦~</div>
         </van-col>
-        <van-col :span="8">
+        <van-col :span="6">
           <div class="photo">
             <img :src="cusInfo.imgPhoto" alt=""/>
           </div>

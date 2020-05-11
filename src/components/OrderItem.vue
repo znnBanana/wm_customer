@@ -97,11 +97,13 @@ export default {
     // 添加评论
     saveCommentHandler(){
         this.show = false;
+        Toast('完成评价')
         let form = {
             cusId:this.cusId,
             orderId:this.orderId,
             content:this.content
         }
+        console.log(form)
         this.SaveComment(form)
         .then(()=>{
           this.findAllOrders(this.info.id)
